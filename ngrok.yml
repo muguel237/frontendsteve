@@ -1,0 +1,10 @@
+authtoken: 3FSb2Vklus5dmcFROtiIZG4OAao_6tKMr7tmzA9ye2nHRmqnK
+version: "2"
+tunnels:
+  frontend:
+    addr: 5173
+    proto: http
+    domain: extending-ungodly-linked.ngrok-free.dev
+  backend:
+    addr: 8080
+    proto: http

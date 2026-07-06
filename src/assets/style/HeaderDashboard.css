@@ -1,0 +1,38 @@
+/* Container du header */
+.header-container {
+  z-index: 1000;
+}
+
+/* Style du menu mobile */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #fff;
+  border-bottom: 0px solid rgba(0,0,0,0.1);
+}
+
+.mobile-menu.active {
+  max-height: 300px; /* Assez grand pour contenir tous les boutons */
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Optimisation pour mobile (téléphone) */
+@media (max-width: 767px) {
+  .header-container h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* S'assurer que le menu mobile disparait sur desktop */
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Petite touche esthétique sur les boutons au survol */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s;
+}

@@ -1,0 +1,13 @@
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #F8FAFC;
+  overflow-x: hidden;
+}
+
+:root{
+  --primary: #2563EB;
+  --secondary: #F59E0B;
+  --dark: #0F172A;
+  --gray: #64748B;
+  --light: #F8FAFC;
+}

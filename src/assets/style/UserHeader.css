@@ -1,0 +1,60 @@
+/* ════════════════════════════════════════════════════════════════
+   HEADER HAUT
+   - PAS de sticky/fixed ici : c'est le layout (flexDirection:column
+     + height:100dvh) qui le maintient en haut naturellement.
+════════════════════════════════════════════════════════════════ */
+.nav-desktop-container {
+  gap: 12px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   NAV BAS MOBILE — position:fixed → toujours visible
+════════════════════════════════════════════════════════════════ */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #dee2e6;
+  z-index: 1050;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 0.65rem;
+  font-weight: 600;
+  flex: 1;
+  padding: 6px 0;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-btn.active {
+  color: #0d6efd !important;
+}
+
+/* Cache la nav mobile sur desktop */
+@media (min-width: 768px) {
+  .mobile-bottom-nav { display: none !important; }
+}
+
+/* Compat ancienne classe */
+.mobile-content-padding {
+  padding-bottom: calc(65px + env(safe-area-inset-bottom));
+}
+@media (min-width: 768px) {
+  .mobile-content-padding { padding-bottom: 0; }
+}

@@ -1,0 +1,360 @@
+/* ============================================================
+   PROFIL.CSS — Cohérent avec login.css et le design global
+   Couleurs : #0070f3 (bleu principal), #f8fafc (fond),
+              #e2e8f0 (bordures), Poppins
+   ============================================================ */
+
+.profil-page {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 2rem 1rem;
+}
+
+/* ---- CARTE PRINCIPALE ---- */
+.profil-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06),
+              0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ---- EN-TÊTE DU PROFIL ---- */
+.profil-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* ---- ZONE PHOTO ---- */
+.profil-photo-wrapper {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+}
+
+.profil-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0070f3;
+}
+
+/* Overlay "Modifier" qui apparaît au survol de la photo */
+.profil-photo-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 112, 243, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  gap: 4px;
+}
+
+.profil-photo-wrapper:hover .profil-photo-overlay {
+  opacity: 1;
+}
+
+/* Placeholder quand pas de photo */
+.profil-photo-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  border: 3px solid #0070f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+}
+
+/* Spinner upload photo */
+.profil-photo-uploading {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #f0f7ff;
+  border: 3px solid #0070f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input file caché — déclenché par le clic sur la photo */
+.profil-file-input {
+  display: none;
+}
+
+/* Nom affiché sous la photo */
+.profil-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-top: 0.75rem;
+  margin-bottom: 0.15rem;
+}
+
+.profil-email {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Badge statut compte */
+.profil-badge {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+.profil-badge-actif {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.profil-badge-attente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* ---- SECTION INFOS ---- */
+.profil-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid #f1f5f9;
+}
+
+/* Champ en lecture seule */
+.profil-field-readonly {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.6rem;
+  background-color: #f8fafc;
+  color: #475569;
+  cursor: not-allowed;
+  width: 100%;
+}
+
+/* Icône cadenas à côté des champs verrouillés */
+.profil-locked-icon {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-left: 0.4rem;
+}
+
+/* Champ éditable */
+.profil-input {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.6rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.profil-input:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.15);
+}
+
+/* ---- BOUTONS ---- */
+.btn-profil-save {
+  background-color: #0070f3;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 2rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-profil-save:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.btn-profil-save:disabled {
+  background-color: #a0cfff;
+  cursor: not-allowed;
+}
+
+/* ---- ALERTES ---- */
+.profil-alert-success {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 0.6rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profil-alert-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+  border-radius: 0.6rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ============================================================
+   RESPONSIVE MOBILE — max-width: 576px
+   Ne touche pas au desktop (> 576px)
+   ============================================================ */
+@media (max-width: 576px) {
+
+  /* Page entière — supprimer le padding latéral */
+  .profil-page {
+    padding: 0;
+    background-color: #f8fafc;
+  }
+
+  /* Carte — bords arrondis uniquement en haut, pleine largeur */
+  .profil-card {
+    padding: 1.5rem 1rem 2rem 1rem;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+
+  /* En-tête : photo + nom bien centré */
+  .profil-header {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Photo légèrement plus petite sur mobile */
+  .profil-photo-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  .profil-photo {
+    width: 90px;
+    height: 90px;
+    border-width: 2px;
+  }
+
+  .profil-photo-placeholder,
+  .profil-photo-uploading {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* Overlay toujours visible sur mobile (pas de hover sur tactile) */
+  .profil-photo-overlay {
+    opacity: 1;
+    background: rgba(0, 112, 243, 0.45);
+    font-size: 0.68rem;
+  }
+
+  /* Nom plus compact */
+  .profil-name {
+    font-size: 1.15rem;
+    margin-top: 0.6rem;
+    text-align: center;
+  }
+
+  /* Badge centré */
+  .profil-badge {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.65rem;
+  }
+
+  /* Champs readonly et inputs — taille tactile confortable */
+  .profil-field-readonly,
+  .profil-input {
+    font-size: 0.9rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: 0.75rem;
+  }
+
+  /* Labels au-dessus des champs — plus lisibles */
+  label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 0.3rem;
+    display: block;
+  }
+
+  /* Bouton sauvegarder — pleine largeur sur mobile */
+  .btn-profil-save {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Alertes — plus compactes */
+  .profil-alert-success,
+  .profil-alert-error {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.85rem;
+    border-radius: 0.75rem;
+  }
+
+  /* Bootstrap alert — cohérence */
+  .alert {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.85rem;
+    border-radius: 0.75rem;
+  }
+
+  /* Séparateur hr — moins d'espace */
+  hr {
+    margin: 1rem 0;
+  }
+
+  /* Section infos — espacement réduit */
+  .mb-4 {
+    margin-bottom: 1rem !important;
+  }
+
+  /* Titre section */
+  .profil-section-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Colonnes Bootstrap — tout en pleine largeur sur mobile */
+  .col-sm-6 {
+    width: 100%;
+  }
+
+  /* Bouton sauvegarder — ne plus être aligné à droite sur mobile */
+  .text-end {
+    text-align: center !important;
+  }
+}

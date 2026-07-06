@@ -1,0 +1,73 @@
+/* ── Card inscription ── */
+.style-register-card {
+  padding: 0.5rem;           /* mobile */
+}
+@media (min-width: 576px) {
+  .style-register-card {
+    padding: 1rem;
+  }
+}
+
+/* ── Champs ── */
+.cocolis-input {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+  font-size: 0.9rem;
+  border: 1px solid #dcdcdc;
+  color: #212529;
+  transition: border-color 0.2s ease-in-out;
+}
+@media (min-width: 576px) {
+  .cocolis-input {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+.cocolis-input::placeholder {
+  color: #adb5bd;
+  opacity: 0.8;
+}
+.cocolis-input:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ── Œil mot de passe ── */
+.eye-toggle-btn {
+  border: 1px solid #dcdcdc;
+}
+
+/* ── Checkbox ── */
+.cocolis-checkbox {
+  border-color: #ced4da;
+  cursor: pointer;
+}
+.cocolis-checkbox:checked {
+  background-color: #2563EB;
+  border-color: #2563EB;
+}
+
+/* ── Utilitaires ── */
+.py-2-5 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.separator-text {
+  font-size: 0.75rem;
+  color: #adb5bd;
+}
+.font-medium {
+  font-weight: 500;
+}
+.fw-extrabold {
+  font-weight: 800;
+}
+.fs-7 {
+  font-size: 0.8rem;
+}
+
+/* ── Selfie / caméra ── */
+.selfie-area {
+  min-height: 140px;
+}

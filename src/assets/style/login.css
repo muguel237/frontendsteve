@@ -1,0 +1,90 @@
+/* ── Fond général ── */
+.bg-light-cocolis {
+  background-color: #f8fafc;
+}
+
+/* ── Couleurs primaires Colisender ── */
+.text-primary-cocolis {
+  color: #2563EB !important;
+}
+
+/* ── Bouton primaire ── */
+.btn-primary-cocolis {
+  background-color: #2563EB;
+  color: #ffffff;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+.btn-primary-cocolis:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.btn-primary-cocolis:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* ── Card principale (login / forgot) ── */
+.style-login-card {
+  background: #ffffff;
+  padding: 1.5rem;           /* mobile : padding réduit */
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.07),
+              0 8px 10px -6px rgba(0,0,0,0.04);
+}
+@media (min-width: 576px) {
+  .style-login-card {
+    padding: 2.5rem;         /* sm+ : padding normal */
+  }
+}
+
+/* ── Champs de formulaire ── */
+.cocolis-input-field {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  border: 1.5px solid #e2e8f0;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+@media (min-width: 576px) {
+  .cocolis-input-field {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+.cocolis-input-field:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background-color: #ffffff;
+}
+
+/* ── Bouton œil mot de passe ── */
+.eye-btn-login {
+  border: 1.5px solid #e2e8f0;
+  border-left: none;
+  cursor: pointer;
+  padding-right: 0.75rem;
+  transition: all 0.2s ease;
+}
+.input-group:focus-within .cocolis-input-field {
+  border-color: #2563EB;
+}
+.input-group:focus-within .eye-btn-login {
+  border-color: #2563EB;
+}
+
+/* ── Liens & utilitaires ── */
+.text-link-hover:hover {
+  text-decoration: underline !important;
+}
+.py-2-5 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.fw-extrabold {
+  font-weight: 800;
+}
+.tiny-text {
+  font-size: 0.78rem;
+}
