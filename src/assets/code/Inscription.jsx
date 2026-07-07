@@ -236,8 +236,14 @@ const navigate = useNavigate();
     
     // --- LES CLÉS CI-DESSOUS DOIVENT CORRESPONDRE AU BACKEND ---
     // Ces noms doivent être identiques aux variables dans InscriptionForm.java
-    dataToSend.append("numeroPrincipal", formData.numero_principal);
-    dataToSend.append("numeroSecondaire", formData.numero_secondaire);
+    // Normaliser les numéros au format 237XXXXXXXXX
+    const normaliserNumero = (num) => {
+      if (!num) return "";
+      const clean = num.replace(/\D/g, "");
+      return clean.startsWith("237") ? clean : "237" + clean;
+    };
+    dataToSend.append("numeroPrincipal", normaliserNumero(formData.numero_principal));
+    dataToSend.append("numeroSecondaire", normaliserNumero(formData.numero_secondaire));
     dataToSend.append("otp", otp);
     
     // Ajout des fichiers

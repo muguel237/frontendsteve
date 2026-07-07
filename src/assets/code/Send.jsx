@@ -100,7 +100,10 @@ export default function Send() {
     fd.append("dimension", formData.dimension || "0");
     fd.append("description", formData.description);
     fd.append("dateLivraison", formData.dateLivraison);
-    fd.append("telephoneDestinataire", formData.telephoneDestinataire);
+    // Normaliser au format 237XXXXXXXXX
+    const numeroClean = formData.telephoneDestinataire.replace(/\D/g, "");
+    const numeroNormalise = numeroClean.startsWith("237") ? numeroClean : "237" + numeroClean;
+    fd.append("telephoneDestinataire", numeroNormalise);
     fd.append("prixTransport", formData.prixTransport);
     fd.append("statutColis", "EN_ATTENTE");
 
